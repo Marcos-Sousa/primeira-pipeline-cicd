@@ -43,4 +43,5 @@ jobs:
             ./k8s/deployment.yaml
           images: |
             marcossousalima/aula-primeira-pipeline:v${{ github.run_number}}
+          kubectl-flags: --validate=false  
 
