@@ -36,7 +36,7 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.K8S }} 
       - name: Execucao do manifesto
-        uses: azure/k8s-deploy@v5
+        uses: Azure/k8s-deploy@v5
         with:
           manifests: |
             ./k8s/deployment.yaml
