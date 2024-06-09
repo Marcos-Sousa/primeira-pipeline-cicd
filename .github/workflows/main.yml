@@ -16,4 +16,13 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.TOKEN }}
+      - name: build da imagem
+        uses: docker/build-push-action@v5.3.0
+        with:
+          context: ./src
+          file: .src/Dockerfile
+          push: true
+          tags: |
+           marcossousalima/aula-primeira-pipeline:v${{ github.run_number}} 
+           marcossousalima/aula-primeira-pipeline:latest  
 
