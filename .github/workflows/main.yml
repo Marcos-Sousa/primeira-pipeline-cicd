@@ -25,4 +25,14 @@ jobs:
           tags: |
            marcossousalima/aula-primeira-pipeline:v${{ github.run_number}} 
            marcossousalima/aula-primeira-pipeline:latest  
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtendo codigo
+        uses: actions/checkout@v4.1.5
+      - name: Configuração de contextodo kubernetes
+        uses: azure/k8s-set-context@v4.0.0
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S }}  
 
