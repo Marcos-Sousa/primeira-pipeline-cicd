@@ -1,3 +1,4 @@
+# kubectl apply -f arquivo.yaml --validate=false
 apiVersion: apps/v1
 kind: Deployment
 metadata:
